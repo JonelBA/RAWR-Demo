@@ -1,2 +1,14 @@
-/* Compact text-glyph fallback for the Font Awesome icon names in the source UI. */
-.fas,.far,.fab{font-style:normal;font-family:system-ui,sans-serif;display:inline-block;min-width:1em;text-align:center}.fa-home:before{content:'⌂'}.fa-digging:before,.fa-pickaxe:before{content:'⛏'}.fa-dice:before{content:'🎲'}.fa-dice-six:before{content:'🎲'}.fa-coins:before{content:'🪙'}.fa-ticket-alt:before{content:'🎟'}.fa-wallet:before{content:'👛'}.fa-trophy:before{content:'🏆'}.fa-gift:before{content:'🎁'}.fa-user:before{content:'👤'}.fa-user-shield:before{content:'🛡'}.fa-sign-out-alt:before{content:'↪'}.fa-bars:before{content:'☰'}.fa-xmark:before,.fa-times:before{content:'×'}.fa-play:before{content:'▶'}.fa-star:before{content:'★'}.fa-circle:before{content:'●'}.fa-history:before{content:'◷'}.fa-exchange-alt:before{content:'⇄'}.fa-ethereum:before{content:'◇'}.fa-user-cog:before{content:'⚙'}.fa-chart-line:before{content:'▥'}.fa-shield-alt:before{content:'🛡'}.fa-camera:before{content:'📷'}.fa-tasks:before{content:'☷'}.fa-medal:before{content:'🏅'}.fa-info-circle:before{content:'ⓘ'}.fa-users:before{content:'👥'}.fa-user-check:before{content:'☑'}.fa-id-card:before{content:'🪪'}.fa-lock:before{content:'🔒'}.fa-check-circle:before{content:'✓'}.fa-file-alt:before{content:'▤'}.fa-arrow-right:before{content:'→'}.fa-calendar-check:before{content:'▣'}.fa-crown:before{content:'♛'}.fa-envelope:before{content:'✉'}.fa-plus:before{content:'+'}.fa-minus:before{content:'−'}
+/*
+ * RAWR icon compatibility layer.
+ *
+ * The project loads Font Awesome 6 on the player pages.  The previous
+ * compatibility rules replaced Font Awesome's icon font with emoji/text
+ * glyphs, which made the sidebar, balance icons, and other controls look
+ * different from the PHP pages.  Let Font Awesome render the real icons.
+ */
+.fas,
+.far,
+.fab {
+    font-style: normal;
+    display: inline-block;
+}
