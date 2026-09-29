@@ -277,53 +277,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .admin-stats-grid > article { padding: .9rem; }
 }
 
-/* ================================================================
-   PLAYER SIDEBAR DRAWER FIX
-   The mobile drawer should open from the right, matching the shared
-   player pages and the RAWR header interaction.
-   ================================================================ */
-
-#app-sidebar {
-    right: 0;
-}
-
+/* ============================================================
+   Mobile card/layout polish
+   ============================================================ */
 @media (max-width: 760px) {
-    #app-sidebar {
-        top: 66px;
-        left: auto;
-        right: 0;
-        bottom: 0;
-        width: min(280px, 82vw);
-        height: calc(100vh - 66px);
-        transform: translateX(102%);
-        border-left: 1px solid rgba(255, 215, 0, .10);
-        border-right: 0;
-        padding: 1rem 0 3rem;
-        box-shadow: -14px 12px 32px rgba(0, 0, 0, .38);
-        z-index: 140;
-    }
-
-    #app-sidebar.active {
-        transform: translateX(0);
-    }
-
-    #app-sidebar .sidebar-item {
-        min-height: 42px;
-        padding: .72rem .9rem;
-        margin: .08rem 0;
-        font-size: .88rem;
-    }
-
-    #app-sidebar .sidebar-item i {
-        flex: 0 0 1.35rem;
-        width: 1.35rem;
-    }
+  .multipage-game-grid { grid-template-columns: 1fr !important; gap: .85rem; }
+  .multipage-game-card { min-width: 0; }
+  .multipage-game-card img { height: 185px; object-fit: cover; }
+  .game-action-row { display: grid !important; grid-template-columns: 1fr 1fr; gap: .65rem; }
+  .game-action-row > * { width: 100% !important; min-width: 0; }
+  .reward-grid { grid-template-columns: repeat(7, minmax(132px, 1fr)) !important; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; padding-bottom: .8rem; }
+  .reward-card { scroll-snap-align: start; }
+  .challenge-grid { grid-template-columns: 1fr !important; }
+  .challenge-card { min-width: 0; }
+  .profile-overview-grid { grid-template-columns: 1fr !important; }
+  .wallet-actions { grid-template-columns: 1fr !important; }
+  .wallet-actions > article:last-child:nth-child(odd) { grid-column: auto !important; }
+  .leaderboard-tabs, .profile-tabs { overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+  .leaderboard-tabs::-webkit-scrollbar, .profile-tabs::-webkit-scrollbar { display: none; }
 }
 
-@media (max-width: 420px) {
-    #app-sidebar {
-        width: min(270px, 84vw);
-        top: 64px;
-        height: calc(100vh - 64px);
-    }
+@media (max-width: 560px) {
+  .multipage-game-card img { height: 170px; }
+  .game-action-row { grid-template-columns: 1fr !important; }
+  .reward-grid { grid-template-columns: repeat(7, minmax(140px, 1fr)) !important; }
+  .admin-page-nav { overflow-x: auto; flex-wrap: nowrap; }
+  .admin-page-nav a { flex: 0 0 auto !important; }
 }
