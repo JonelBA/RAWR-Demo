@@ -1546,67 +1546,63 @@
             text-decoration: none !important;
         }
 
+/* ================================================================
+   RAWR PLAYER HEADER + SIDEBAR MOBILE CONSISTENCY FIX
+   Keeps the dashboard header identical to Mining and other player pages.
+   ================================================================ */
 
-/* ==============================
-   MOBILE TOP BAR / HEADER FIXES
-   ============================== */
+.top-nav {
+    min-width: 0;
+}
+
+.top-nav .logo {
+    flex: 0 0 auto;
+    min-width: 0;
+    text-decoration: none;
+}
+
+.top-nav .coin-logo.has-image::before {
+    content: none;
+}
+
+.top-nav .coin-logo.has-image {
+    flex: 0 0 auto;
+}
+
+.top-nav .coin-logo.has-image img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-actions {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.nav-actions .wallet-balance {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.nav-actions .balance-item {
+    min-width: 0;
+    white-space: nowrap;
+}
+
 @media (max-width: 760px) {
     .top-nav {
-        padding: .65rem .75rem;
-        gap: .5rem;
+        padding: .65rem .8rem;
+        gap: .65rem;
     }
 
-    .logo {
-        min-width: 0;
-        flex: 0 1 auto;
-        gap: .55rem;
-        font-size: 1.2rem;
-    }
-
-    .wallet-balance {
-        gap: .35rem;
-        margin-right: .15rem;
-        min-width: 0;
-    }
-
-    .balance-item {
-        min-width: 0;
-        padding: .35rem .55rem;
-        gap: .35rem;
-    }
-
-    .balance-icon {
-        font-size: .95rem;
+    .top-nav .logo {
         flex: 0 0 auto;
     }
 
-    .balance-label,
-    .balance-value {
-        font-size: .75rem;
-    }
-
-    .balance-value {
-        margin-left: 0;
-    }
-
-    .nav-actions {
-        min-width: 0;
-        gap: .45rem;
-        margin-left: auto;
-        flex: 0 1 auto;
-    }
-
-    .menu-toggle {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-        flex: 0 0 38px;
-        font-size: 1.15rem;
-    }
-}
-
-/* Hide only the BRAND WORDMARK on small phones so the menu button never gets pushed off-screen. */
-@media (max-width: 600px) {
     .top-nav .logo > span:last-child {
         display: none;
     }
@@ -1615,66 +1611,128 @@
         gap: 0;
     }
 
-    .top-nav .coin-logo {
-        width: 40px;
-        height: 40px;
+    .top-nav .coin-logo,
+    .top-nav .coin-logo.has-image {
+        width: 42px;
+        height: 42px;
+        margin: 0;
+    }
+
+    .top-nav .nav-actions {
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+        justify-content: flex-end;
+        gap: .45rem;
     }
 
     .top-nav .wallet-balance {
-        gap: .3rem;
+        flex: 1 1 auto;
+        min-width: 0;
+        justify-content: flex-end;
+        gap: .4rem;
+        margin-right: 0;
     }
 
     .top-nav .balance-item {
-        padding: .32rem .48rem;
+        flex: 0 1 auto;
+        width: auto;
+        min-width: 0;
+        padding: .42rem .62rem;
+        gap: .35rem;
+        justify-content: center;
+    }
+
+    .top-nav .balance-icon {
+        flex: 0 0 auto;
+        font-size: 1rem;
+    }
+
+    .top-nav .balance-value {
+        white-space: nowrap;
+        font-size: .82rem;
+        margin-left: 0;
+    }
+
+    .top-nav .menu-toggle {
+        flex: 0 0 42px;
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+        margin: 0;
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-nav .coin-logo,
+    .top-nav .coin-logo.has-image {
+        width: 40px;
+        height: 40px;
     }
 
     .top-nav .balance-label {
         display: none;
     }
 
-    .top-nav .balance-value {
-        font-size: .74rem;
-        white-space: nowrap;
+    .top-nav .balance-item {
+        padding: .38rem .58rem;
     }
 
-    .top-nav .balance-icon {
-        font-size: .9rem;
+    .top-nav .balance-value {
+        font-size: .78rem;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .top-nav {
         padding-left: .55rem;
         padding-right: .55rem;
+        gap: .4rem;
     }
 
-    .top-nav .coin-logo {
+    .top-nav .nav-actions {
+        gap: .3rem;
+    }
+
+    .top-nav .wallet-balance {
+        gap: .25rem;
+    }
+
+    .top-nav .balance-item {
+        padding: .34rem .48rem;
+        gap: .25rem;
+    }
+
+    .top-nav .balance-icon {
+        font-size: .88rem;
+    }
+
+    .top-nav .balance-value {
+        font-size: .72rem;
+    }
+
+    .top-nav .menu-toggle {
+        flex-basis: 40px;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .top-nav .coin-logo,
+    .top-nav .coin-logo.has-image {
         width: 38px;
         height: 38px;
     }
 
-    .top-nav .wallet-balance {
-        gap: .2rem;
-    }
-
     .top-nav .balance-item {
-        padding: .3rem .4rem;
-        gap: .25rem;
+        padding: .32rem .42rem;
     }
 
     .top-nav .balance-value {
         font-size: .68rem;
-    }
-
-    .top-nav .balance-icon {
-        font-size: .8rem;
-    }
-
-    .top-nav .menu-toggle {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
-        flex-basis: 36px;
-        font-size: 1rem;
     }
 }
