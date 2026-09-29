@@ -61,19 +61,21 @@
       ['profile', 'Profile', 'pages/profile/index.html', 'fa-user']
     ];
     if (header) {
-      // Use one shared player header on every player page, including Dashboard.
-      // The mobile CSS hides the RAWR wordmark at small widths, keeping the menu visible.
-      const logoMarkup = `<span class="coin-logo has-image"><img src="${href('assets/logo.png')}" alt="RAWR Logo"></span>`;
+      const logoMarkup = page === 'dashboard'
+        ? `<span class="coin-logo has-image"><img src="${href('assets/logo.png')}" alt=""></span>`
+        : '<span class="coin-logo" aria-hidden="true"></span>';
       header.innerHTML = `<nav class="top-nav"><a class="logo" href="${href('pages/dashboard/index.html')}">${logoMarkup}<span>RAWR</span></a><div class="nav-actions"><div class="wallet-balance"><div class="balance-item"><i class="fas fa-coins balance-icon" aria-hidden="true"></i><span class="balance-label">RAWR:</span><span class="balance-value" id="header-rawr">${formatDemoNumber(DemoState.rawrBalance)}</span></div><div class="balance-item"><i class="fas fa-ticket-alt balance-icon" aria-hidden="true"></i><span class="balance-label">Tickets:</span><span class="balance-value" id="header-tickets">${formatDemoNumber(DemoState.ticketBalance)}</span></div></div><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i><i class="fas fa-xmark" aria-hidden="true"></i></button></div></nav>`;
     }
     if (sidebar) {
       sidebar.className = 'sidebar';
       sidebar.setAttribute('aria-label', 'Player navigation');
+      sidebar.setAttribute('aria-hidden', 'true');
       sidebar.innerHTML = `${links.map(([key, label, path, icon]) => `<a class="sidebar-item ${page === key || (key === 'games' && page.startsWith('game-')) ? 'active' : ''}" href="${href(path)}"><i class="fas ${icon}" aria-hidden="true"></i><span>${label}</span></a>`).join('')}<a class="sidebar-item" href="${href('pages/auth/login.html')}" data-demo-logout><i class="fas fa-sign-out-alt" aria-hidden="true"></i><span>Logout</span></a>`;
     }
     document.getElementById('menuToggle')?.addEventListener('click', event => {
       const button = event.currentTarget;
       const isOpen = sidebar?.classList.toggle('active') ?? false;
+      sidebar?.setAttribute('aria-hidden', String(!isOpen));
       button.classList.toggle('active', isOpen);
       button.setAttribute('aria-expanded', String(isOpen));
     });
