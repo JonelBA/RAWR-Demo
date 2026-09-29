@@ -91,3 +91,19 @@ body.game-standalone-page .game-actions .btn { border-radius: 50px; }
   body.game-standalone-page .game-play-panel,
   body.game-standalone-page .game-paytable { padding: 1.2rem; }
 }
+
+/* Standalone games: phone-safe sizing */
+@media (max-width: 760px) {
+  body.game-standalone-page .page-main.game-wrapper { width: 100%; max-width: 100%; box-sizing: border-box; padding: 4.5rem .65rem 2rem !important; overflow-x: hidden; }
+  body.game-standalone-page .page-heading { padding: 1rem .25rem 1.25rem !important; }
+  body.game-standalone-page .page-heading h1 { font-size: clamp(1.5rem, 7vw, 2.1rem) !important; }
+  body.game-standalone-page .page-heading p { font-size: .88rem; }
+  body.game-standalone-page .standalone-game-layout { grid-template-columns: 1fr !important; gap: .75rem; }
+  body.game-standalone-page .game-play-panel, body.game-standalone-page .game-paytable { width: 100%; max-width: 100%; box-sizing: border-box; padding: .85rem !important; }
+  body.game-standalone-page canvas, body.game-standalone-page video, body.game-standalone-page img { max-width: 100%; height: auto; }
+  body.game-standalone-page .game-action-row { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; }
+  body.game-standalone-page .game-action-row > * { min-width: 0; }
+}
+@media (max-width: 420px) {
+  body.game-standalone-page .game-action-row { grid-template-columns: 1fr; }
+}

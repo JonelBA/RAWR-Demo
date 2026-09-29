@@ -324,3 +324,9 @@
             }
         }
     
+
+@media (max-width: 760px) {
+  .leaderboard-container, .leaderboard-list { width: 100%; max-width: 100%; overflow-x: auto; }
+  .leaderboard-row, .leaderboard-header { min-width: 560px; }
+  .leaderboard-tabs { overflow-x: auto; }
+}

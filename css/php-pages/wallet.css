@@ -340,3 +340,11 @@
             background: var(--secondary);
         }
     
+@media (max-width: 760px) {
+  .wallet-container, .wallet-summary, .wallet-actions { width: 100%; max-width: 100%; box-sizing: border-box; }
+  .wallet-summary { grid-template-columns: 1fr !important; }
+  .wallet-actions { grid-template-columns: 1fr !important; }
+  .wallet-actions > article:last-child:nth-child(odd) { grid-column: auto !important; }
+  .transaction-item { flex-wrap: wrap; gap: .5rem; }
+  .transaction-item > * { min-width: 0; }
+}

@@ -388,3 +388,13 @@
             }
         }
     
+@media (max-width: 760px) {
+  .daily-page, .daily-container { width: 100%; max-width: 100%; overflow-x: hidden; }
+  .daily-grid, .calendar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: .65rem; }
+  .daily-card, .calendar-day { min-width: 0; padding: .85rem .55rem; }
+  .daily-card h3, .calendar-day h3 { font-size: .9rem; }
+  .daily-card .btn, .calendar-day .btn { width: 100%; min-height: 40px; font-size: .76rem; }
+}
+@media (max-width: 360px) {
+  .daily-grid, .calendar-grid { grid-template-columns: 1fr !important; }
+}

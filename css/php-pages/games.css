@@ -258,3 +258,16 @@
             }
         }
     
+/* Mobile game lobby polish */
+@media (max-width: 760px) {
+  .game-card, .multipage-game-card { min-width: 0; width: 100%; }
+  .game-card img, .multipage-game-card img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  .game-info, .multipage-game-card .game-card-body { padding: 1rem; }
+  .game-title { font-size: 1.15rem; }
+  .game-desc { font-size: .84rem; line-height: 1.5; }
+  .game-button, .game-card .btn { width: 100%; min-height: 44px; }
+}
+@media (max-width: 420px) {
+  .game-title { font-size: 1.05rem; }
+  .game-desc { font-size: .8rem; }
+}

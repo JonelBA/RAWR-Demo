@@ -759,3 +759,13 @@
             color: var(--text-muted);
             font-size: 0.85rem;
         }
+
+@media (max-width: 760px) {
+  .profile-container, .profile-overview-grid, .profile-form-grid { width: 100%; max-width: 100%; box-sizing: border-box; }
+  .profile-banner { flex-wrap: wrap; }
+  .profile-tabs { overflow-x: auto; white-space: nowrap; }
+  .profile-form-grid { grid-template-columns: 1fr !important; }
+  .profile-form-grid .wide { grid-column: auto !important; }
+  .profile-stats div { gap: .5rem; }
+  .profile-stats dd { overflow-wrap: anywhere; }
+}
