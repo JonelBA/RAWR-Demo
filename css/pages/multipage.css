@@ -276,3 +276,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .game-action-row { flex-direction: column; }
   .admin-stats-grid > article { padding: .9rem; }
 }
+
+
+/* Final narrow-screen safeguards */
+@media (max-width: 560px) {
+  .standalone-game { width: 100%; max-width: 100%; overflow: hidden; }
+  .game-play-panel, .game-paytable { min-width: 0; }
+  .bet-controls { width: 100%; max-width: 100%; }
+  .slot-reels { padding-left: .25rem; padding-right: .25rem; }
+}
