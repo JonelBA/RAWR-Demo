@@ -1545,3 +1545,294 @@
         a:visited {
             text-decoration: none !important;
         }
+
+
+/* ============================================================
+   RAWR MOBILE ENHANCEMENT LAYER
+   Keeps the existing RAWR visual system while improving
+   touch targets, spacing, wrapping and narrow-screen layouts.
+   ============================================================ */
+
+@media (max-width: 760px) {
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { -webkit-text-size-adjust: 100%; }
+    img, video, canvas, svg { max-width: 100%; }
+    button, a, input, select, textarea { touch-action: manipulation; }
+    button, .btn, .play-btn, .coming-soon-btn { min-height: 44px; }
+
+    .page-main {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding-left: .85rem;
+        padding-right: .85rem;
+        overflow-x: hidden;
+    }
+
+    .app-topbar {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .topbar-balances {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .topbar-balances span {
+        white-space: nowrap;
+    }
+
+    .page-heading h1,
+    .page-heading h2,
+    .content-panel h2,
+    .game-play-panel h2,
+    .game-paytable h2 {
+        overflow-wrap: anywhere;
+    }
+
+    .page-heading p,
+    .content-panel p,
+    .game-description,
+    .feature-desc {
+        overflow-wrap: anywhere;
+    }
+
+    .content-panel,
+    .game-play-panel,
+    .game-paytable {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .panel-heading,
+    .game-action-row,
+    .activity-header,
+    .referral-header {
+        flex-wrap: wrap;
+    }
+
+    .table-scroll,
+    .transaction-table,
+    .leaderboard-table {
+        max-width: 100%;
+    }
+
+    .table-scroll {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .data-table,
+    .transaction-table table,
+    .leaderboard-table table {
+        min-width: 600px;
+    }
+
+    .slot-reels {
+        width: 100%;
+        max-width: 100%;
+        gap: clamp(.35rem, 2.5vw, .65rem);
+        overflow: hidden;
+    }
+
+    .slot-reels span {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+    }
+
+    .simba-cards,
+    .prowl-board {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .profile-form-grid input,
+    .profile-form-grid select,
+    .profile-form-grid textarea,
+    .content-panel input,
+    .content-panel select,
+    .content-panel textarea,
+    .wallet-actions input,
+    .wallet-actions select {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .profile-form-grid button,
+    .wallet-actions .btn,
+    .content-panel .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .admin-page-nav {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .admin-page-nav::-webkit-scrollbar { display: none; }
+
+    #app-sidebar {
+        max-width: 84vw;
+    }
+}
+
+@media (max-width: 560px) {
+    .app-topbar {
+        padding-left: .65rem;
+        padding-right: .65rem;
+    }
+
+    .app-brand {
+        flex: 0 1 auto;
+        max-width: 42vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .topbar-balances {
+        flex: 0 1 auto;
+    }
+
+    .topbar-balances span {
+        max-width: 28vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .page-main {
+        padding: .9rem .7rem 3rem;
+    }
+
+    .content-panel,
+    .game-play-panel,
+    .game-paytable {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .page-heading { gap: .7rem; }
+    .page-heading h1 { font-size: clamp(1.45rem, 7vw, 2rem); }
+
+    .summary-card,
+    .wallet-summary > article,
+    .admin-stats-grid > article {
+        padding: .95rem;
+    }
+
+    .summary-card strong,
+    .wallet-summary strong,
+    .admin-stats-grid strong {
+        font-size: 1.25rem;
+    }
+
+    .multipage-game-card img { height: 170px; }
+
+    .game-card,
+    .feature-card {
+        min-width: 0;
+    }
+
+    .auth-container,
+    .auth-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .auth-page .app-topbar {
+        padding-left: .65rem;
+        padding-right: .65rem;
+    }
+
+    .landing-hero {
+        min-height: 100svh;
+        box-sizing: border-box;
+    }
+
+    .landing-hero .cta-buttons,
+    .landing-hero .btn {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .landing-hero .features {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .portfolio-demo-notice,
+    .demo-notice {
+        max-width: calc(100vw - 1.2rem);
+    }
+}
+
+@media (max-width: 420px) {
+    .app-topbar { gap: .35rem; }
+    .app-brand { font-size: 1rem; gap: .4rem; }
+    .app-brand img { width: 28px; height: 28px; }
+    .mobile-menu { width: 40px; height: 40px; }
+
+    .topbar-balances span {
+        padding: .35rem .4rem;
+        font-size: .6rem;
+    }
+
+    .page-main { padding-left: .55rem; padding-right: .55rem; }
+
+    .content-panel,
+    .game-play-panel,
+    .game-paytable { padding: .85rem; }
+
+    .quick-link-grid { grid-template-columns: 1fr; }
+
+    .profile-banner {
+        gap: .7rem;
+        flex-wrap: wrap;
+    }
+
+    .profile-banner > div:last-child {
+        min-width: 0;
+        flex: 1 1 160px;
+    }
+
+    .slot-reels span {
+        min-height: 62px;
+        font-size: clamp(2rem, 13vw, 3rem);
+    }
+
+    .simba-cards,
+    .prowl-board {
+        grid-template-columns: repeat(3, minmax(50px, 1fr));
+        gap: .45rem;
+    }
+
+    .symbol-picks button,
+    .beast-picks button {
+        min-width: 48px;
+        padding: .45rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 340px) {
+    .app-brand { max-width: 34vw; font-size: .9rem; }
+    .topbar-balances { display: none; }
+    .page-main { padding-left: .45rem; padding-right: .45rem; }
+    .content-panel, .game-play-panel, .game-paytable { padding: .75rem; }
+    .page-heading h1 { font-size: 1.35rem; }
+    .multipage-game-card img { height: 150px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-sidebar,
+    #app-sidebar,
+    .multipage-game-card,
+    .btn,
+    button,
+    a { transition-duration: .01ms !important; }
+}
