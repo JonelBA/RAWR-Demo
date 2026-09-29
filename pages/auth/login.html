@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/auth.css">
   <script src="js/pages/demo-state.js" defer></script>
   <script src="js/pages/auth.js" defer></script>
@@ -41,7 +42,7 @@
         <label for="password">Password</label>
         <div class="password-input-wrap">
           <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Enter your password" required>
-          <button type="button" class="password-toggle" data-toggle-password="password" aria-label="Show password">👁️</button>
+          <button type="button" class="password-toggle" data-toggle-password="password" aria-label="Show password"><i class="fas fa-eye" aria-hidden="true"></i></button>
         </div>
       </div>
 
@@ -53,7 +54,6 @@
       <button type="submit" class="btn btn-primary">Enter the Jungle</button>
     </form>
 
-    <p class="auth-storage-note">Player accounts are saved in this browser. No server or real account is contacted.</p>
 
     <div class="switch-page">
       <p>Don't have an account? <a href="pages/auth/register.html">Join the Pride</a></p>

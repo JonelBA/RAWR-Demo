@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/auth.css">
   <script src="js/pages/demo-state.js" defer></script>
   <script src="js/pages/auth.js" defer></script>
@@ -44,7 +45,7 @@
         <label class="input-label" for="password">Password</label>
         <div class="password-input-wrap">
           <input class="input-field" type="password" id="password" name="password" autocomplete="new-password" minlength="8" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}" title="Use at least 8 characters with an uppercase letter, lowercase letter, and number." placeholder="Enter your password" required>
-          <button type="button" class="password-toggle" data-toggle-password="password" aria-label="Show password">👁️</button>
+          <button type="button" class="password-toggle" data-toggle-password="password" aria-label="Show password"><i class="fas fa-eye" aria-hidden="true"></i></button>
         </div>
         <small class="password-hint">At least 8 characters with uppercase, lowercase, and a number.</small>
       </div>
@@ -52,7 +53,7 @@
         <label class="input-label" for="confirm">Confirm Password</label>
         <div class="password-input-wrap">
           <input class="input-field" type="password" id="confirm" name="confirm_password" autocomplete="new-password" placeholder="Confirm your password" required>
-          <button type="button" class="password-toggle" data-toggle-password="confirm" aria-label="Show password">👁️</button>
+          <button type="button" class="password-toggle" data-toggle-password="confirm" aria-label="Show password"><i class="fas fa-eye" aria-hidden="true"></i></button>
         </div>
       </div>
       <div class="input-group">
@@ -66,7 +67,6 @@
       <button type="submit" class="submit-btn">Create Account</button>
     </form>
 
-    <p class="auth-storage-note">This portfolio demo saves your account in this browser only. Use sample details, not a real password.</p>
 
     <div class="switch-page">
       <p>Already a member? <a href="pages/auth/login.html">Login to your Den</a></p>
