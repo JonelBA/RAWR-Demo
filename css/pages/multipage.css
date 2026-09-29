@@ -277,11 +277,53 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .admin-stats-grid > article { padding: .9rem; }
 }
 
+/* ================================================================
+   PLAYER SIDEBAR DRAWER FIX
+   The mobile drawer should open from the right, matching the shared
+   player pages and the RAWR header interaction.
+   ================================================================ */
 
-/* Final narrow-screen safeguards */
-@media (max-width: 560px) {
-  .standalone-game { width: 100%; max-width: 100%; overflow: hidden; }
-  .game-play-panel, .game-paytable { min-width: 0; }
-  .bet-controls { width: 100%; max-width: 100%; }
-  .slot-reels { padding-left: .25rem; padding-right: .25rem; }
+#app-sidebar {
+    right: 0;
+}
+
+@media (max-width: 760px) {
+    #app-sidebar {
+        top: 66px;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: min(280px, 82vw);
+        height: calc(100vh - 66px);
+        transform: translateX(102%);
+        border-left: 1px solid rgba(255, 215, 0, .10);
+        border-right: 0;
+        padding: 1rem 0 3rem;
+        box-shadow: -14px 12px 32px rgba(0, 0, 0, .38);
+        z-index: 140;
+    }
+
+    #app-sidebar.active {
+        transform: translateX(0);
+    }
+
+    #app-sidebar .sidebar-item {
+        min-height: 42px;
+        padding: .72rem .9rem;
+        margin: .08rem 0;
+        font-size: .88rem;
+    }
+
+    #app-sidebar .sidebar-item i {
+        flex: 0 0 1.35rem;
+        width: 1.35rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #app-sidebar {
+        width: min(270px, 84vw);
+        top: 64px;
+        height: calc(100vh - 64px);
+    }
 }
