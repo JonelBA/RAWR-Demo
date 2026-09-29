@@ -821,3 +821,116 @@
             }
         }
 
+
+
+/* ==============================
+   MOBILE MINING STATISTICS FIX
+   Keep the three stats cards in one horizontal row like the PHP layout.
+   ============================== */
+.stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stat-card {
+    min-width: 0;
+}
+
+.stat-value {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+    .mining-stats {
+        padding-left: .75rem;
+        padding-right: .75rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.15rem .75rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+        margin-bottom: .8rem;
+    }
+
+    .stat-title {
+        font-size: .95rem;
+    }
+
+    .stat-value {
+        font-size: 1.35rem;
+        line-height: 1.25;
+    }
+
+    .stat-subtext {
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .mining-stats {
+        padding-left: .55rem;
+        padding-right: .55rem;
+    }
+
+    .stats-grid {
+        gap: .65rem;
+    }
+
+    .stat-card {
+        padding: .9rem .45rem;
+        border-radius: 10px;
+    }
+
+    .stat-icon {
+        font-size: 1.6rem;
+        margin-bottom: .55rem;
+    }
+
+    .stat-title {
+        font-size: .78rem;
+        line-height: 1.2;
+    }
+
+    .stat-value {
+        font-size: 1.02rem;
+        line-height: 1.2;
+    }
+
+    .stat-subtext {
+        font-size: .64rem;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 380px) {
+    .stats-grid {
+        gap: .45rem;
+    }
+
+    .stat-card {
+        padding: .75rem .3rem;
+    }
+
+    .stat-icon {
+        font-size: 1.4rem;
+    }
+
+    .stat-title {
+        font-size: .7rem;
+    }
+
+    .stat-value {
+        font-size: .88rem;
+    }
+
+    .stat-subtext {
+        font-size: .58rem;
+    }
+}
