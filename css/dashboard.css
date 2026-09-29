@@ -518,168 +518,145 @@
 }
 
 /* ============================================================
-   RAWR DASHBOARD MOBILE LAYOUT FIX
-   Prevent the legacy dashboard styles from constraining the
-   modern .page-main layout on phones.
+   Dashboard mobile responsive polish
    ============================================================ */
 @media (max-width: 760px) {
-    body[data-page="dashboard"] .page-main.dashboard-page {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding: 1rem .75rem 3rem !important;
-        box-sizing: border-box !important;
-        overflow-x: hidden !important;
-    }
+  .dashboard-page { overflow-x: hidden; }
+  .dashboard-page > .hero {
+    min-height: auto !important;
+    padding: 2rem .8rem 2.5rem !important;
+    box-sizing: border-box;
+  }
+  .dashboard-page > .hero h1 {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto .8rem;
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.18;
+    text-align: center;
+  }
+  .dashboard-page > .hero p {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 1rem;
+    font-size: .98rem !important;
+    line-height: 1.55;
+    text-align: center;
+  }
+  .dashboard-page .coin-animation {
+    width: 118px;
+    height: 118px;
+    margin: 1rem auto 1.1rem;
+  }
+  .dashboard-page .coin-lion { font-size: 3rem; }
+  .dashboard-page .coin-text { font-size: 1.45rem; }
+  .dashboard-page .hero-buttons {
+    width: 100%;
+    max-width: 520px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .65rem;
+    margin: 1rem auto 0;
+  }
+  .dashboard-page .hero-btn {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: .8rem .65rem;
+    font-size: .9rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .dashboard-page .hero-buttons-more { display: flex; }
+  .dashboard-page .hero-buttons-more .hero-btn { width: auto; }
 
-    body[data-page="dashboard"] .dashboard-page > section,
-    body[data-page="dashboard"] .dashboard-page > .demo-disclaimer {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
-    }
+  .dashboard-page .checkin,
+  .dashboard-page .features,
+  .dashboard-page .challenges,
+  .dashboard-page .referral-section,
+  .dashboard-page .activity-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: .7rem;
+    padding-right: .7rem;
+  }
+  .dashboard-page .section-title {
+    margin: 0 0 1rem;
+    font-size: 1.45rem !important;
+    line-height: 1.25;
+  }
 
-    body[data-page="dashboard"] .referral-section,
-    body[data-page="dashboard"] .activity-section {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+  /* Daily check-in: two comfortable cards visible, no accidental clipping. */
+  .dashboard-page .checkin-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(138px, 42vw);
+    grid-template-rows: 1fr;
+    gap: .65rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding: .35rem .1rem .8rem;
+    scrollbar-width: thin;
+  }
+  .dashboard-page .checkin-day {
+    min-width: 0;
+    min-height: 220px;
+    padding: 1rem .7rem;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+  .dashboard-page .checkin-day.available { transform: none; }
+  .dashboard-page .day-number { font-size: .9rem; }
+  .dashboard-page .day-reward { font-size: .82rem; line-height: 1.5; }
+  .dashboard-page .reward-amount { font-size: 1.05rem; }
+  .dashboard-page .checkin-btn { width: 100%; min-height: 38px; font-size: .72rem; padding: .5rem .4rem; }
+  .dashboard-page .streak-info { text-align: center; }
 
-    body[data-page="dashboard"] .referral-card,
-    body[data-page="dashboard"] .activity-card {
-        width: 100% !important;
-        max-width: none !important;
-        box-sizing: border-box !important;
-    }
+  .dashboard-page .features-grid { grid-template-columns: 1fr !important; gap: .85rem; }
+  .dashboard-page .feature-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1.35rem 1rem;
+  }
+  .dashboard-page .feature-icon { font-size: 2.5rem; margin-bottom: .9rem; }
+  .dashboard-page .feature-title { font-size: 1.2rem; margin-bottom: .65rem; }
+  .dashboard-page .feature-desc { font-size: .88rem; line-height: 1.55; }
+  .dashboard-page .feature-btn { max-width: 100%; }
 
-    body[data-page="dashboard"] .referral-stats-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: .55rem;
-    }
+  .dashboard-page .challenges-grid { grid-template-columns: 1fr !important; gap: .8rem; }
+  .dashboard-page .challenge-card { padding: 1rem; }
 
-    body[data-page="dashboard"] .referral-stat {
-        min-width: 0;
-        padding: .9rem .55rem;
-    }
-
-    body[data-page="dashboard"] .referral-number {
-        font-size: 1.65rem;
-    }
-
-    body[data-page="dashboard"] .referral-label {
-        font-size: .76rem;
-        line-height: 1.3;
-    }
-
-    body[data-page="dashboard"] .referral-link-container {
-        width: 100%;
-        min-width: 0;
-    }
-
-    body[data-page="dashboard"] .referral-input {
-        min-width: 0;
-        width: 100%;
-    }
-
-    body[data-page="dashboard"] .activity-list {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    body[data-page="dashboard"] .activity-item {
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-        align-items: center;
-    }
-
-    body[data-page="dashboard"] .activity-details {
-        min-width: 0;
-        flex: 1 1 auto;
-    }
-
-    body[data-page="dashboard"] .activity-description {
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
-
-    body[data-page="dashboard"] .activity-amount {
-        flex: 0 0 auto;
-        white-space: nowrap;
-    }
+  .dashboard-page .referral-card,
+  .dashboard-page .activity-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  .dashboard-page .referral-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+  .dashboard-page .referral-stat { min-width: 0; padding: .75rem .35rem; }
+  .dashboard-page .referral-number { font-size: 1.35rem; }
+  .dashboard-page .referral-label { font-size: .68rem; line-height: 1.3; }
+  .dashboard-page .referral-link-container { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .45rem; }
+  .dashboard-page .referral-input { min-width: 0; width: 100%; }
+  .dashboard-page .copy-btn { min-width: 72px; }
+  .dashboard-page .activity-list { max-height: none; overflow: visible; }
+  .dashboard-page .activity-item { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: .65rem; padding: .8rem 0; }
+  .dashboard-page .activity-description { overflow-wrap: anywhere; }
+  .dashboard-page .activity-amount { white-space: nowrap; }
 }
 
-@media (max-width: 560px) {
-    body[data-page="dashboard"] .page-main.dashboard-page {
-        padding-left: .6rem !important;
-        padding-right: .6rem !important;
-    }
-
-    body[data-page="dashboard"] .referral-card,
-    body[data-page="dashboard"] .activity-card {
-        padding: 1rem !important;
-    }
-
-    body[data-page="dashboard"] .referral-stats-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    body[data-page="dashboard"] .referral-link-container {
-        flex-direction: row;
-    }
-
-    body[data-page="dashboard"] .copy-btn {
-        flex: 0 0 auto;
-        padding: 0 .9rem;
-    }
-
-    body[data-page="dashboard"] .activity-item {
-        gap: .65rem;
-        padding: .8rem;
-    }
-
-    body[data-page="dashboard"] .activity-icon {
-        flex: 0 0 40px;
-    }
-
-    body[data-page="dashboard"] .activity-description {
-        font-size: .88rem;
-        line-height: 1.45;
-    }
-
-    body[data-page="dashboard"] .activity-time {
-        font-size: .72rem;
-    }
-}
-
-@media (max-width: 380px) {
-    body[data-page="dashboard"] .referral-stats-grid {
-        gap: .35rem;
-    }
-
-    body[data-page="dashboard"] .referral-stat {
-        padding: .7rem .35rem;
-    }
-
-    body[data-page="dashboard"] .referral-number {
-        font-size: 1.35rem;
-    }
-
-    body[data-page="dashboard"] .referral-label {
-        font-size: .68rem;
-    }
-
-    body[data-page="dashboard"] .activity-item {
-        align-items: flex-start;
-    }
-
-    body[data-page="dashboard"] .activity-amount {
-        font-size: .78rem;
-    }
+@media (max-width: 420px) {
+  .dashboard-page .hero-buttons { grid-template-columns: 1fr 1fr; }
+  .dashboard-page .hero-btn { padding: .75rem .45rem; font-size: .82rem; }
+  .dashboard-page .section-title { font-size: 1.3rem !important; }
+  .dashboard-page .referral-stats-grid { grid-template-columns: 1fr; }
+  .dashboard-page .referral-stat { padding: .65rem; }
+  .dashboard-page .referral-link-container { grid-template-columns: 1fr; }
+  .dashboard-page .copy-btn { width: 100%; }
+  .dashboard-page .activity-item { grid-template-columns: 36px minmax(0, 1fr); }
+  .dashboard-page .activity-amount { grid-column: 2; }
 }

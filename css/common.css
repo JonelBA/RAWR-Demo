@@ -1546,193 +1546,44 @@
             text-decoration: none !important;
         }
 
-/* ================================================================
-   RAWR PLAYER HEADER + SIDEBAR MOBILE CONSISTENCY FIX
-   Keeps the dashboard header identical to Mining and other player pages.
-   ================================================================ */
-
-.top-nav {
-    min-width: 0;
-}
-
-.top-nav .logo {
-    flex: 0 0 auto;
-    min-width: 0;
-    text-decoration: none;
-}
-
-.top-nav .coin-logo.has-image::before {
-    content: none;
-}
-
-.top-nav .coin-logo.has-image {
-    flex: 0 0 auto;
-}
-
-.top-nav .coin-logo.has-image img {
-    width: 82%;
-    height: 82%;
-    object-fit: contain;
-    display: block;
-    position: relative;
-    z-index: 1;
-}
-
-.nav-actions {
-    flex: 0 1 auto;
-    min-width: 0;
-}
-
-.nav-actions .wallet-balance {
-    flex: 0 1 auto;
-    min-width: 0;
-}
-
-.nav-actions .balance-item {
-    min-width: 0;
-    white-space: nowrap;
-}
-
+/* ============================================================
+   RAWR MOBILE RESPONSIVE POLISH — 2026
+   Shared mobile layout corrections for player pages.
+   ============================================================ */
 @media (max-width: 760px) {
-    .top-nav {
-        padding: .65rem .8rem;
-        gap: .65rem;
-    }
-
-    .top-nav .logo {
-        flex: 0 0 auto;
-    }
-
-    .top-nav .logo > span:last-child {
-        display: none;
-    }
-
-    .top-nav .logo {
-        gap: 0;
-    }
-
-    .top-nav .coin-logo,
-    .top-nav .coin-logo.has-image {
-        width: 42px;
-        height: 42px;
-        margin: 0;
-    }
-
-    .top-nav .nav-actions {
-        flex: 1 1 auto;
-        width: auto;
-        min-width: 0;
-        justify-content: flex-end;
-        gap: .45rem;
-    }
-
-    .top-nav .wallet-balance {
-        flex: 1 1 auto;
-        min-width: 0;
-        justify-content: flex-end;
-        gap: .4rem;
-        margin-right: 0;
-    }
-
-    .top-nav .balance-item {
-        flex: 0 1 auto;
-        width: auto;
-        min-width: 0;
-        padding: .42rem .62rem;
-        gap: .35rem;
-        justify-content: center;
-    }
-
-    .top-nav .balance-icon {
-        flex: 0 0 auto;
-        font-size: 1rem;
-    }
-
-    .top-nav .balance-value {
-        white-space: nowrap;
-        font-size: .82rem;
-        margin-left: 0;
-    }
-
-    .top-nav .menu-toggle {
-        flex: 0 0 42px;
-        width: 42px;
-        min-width: 42px;
-        height: 42px;
-        margin: 0;
-        font-size: 1.15rem;
-    }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body:not(.landing-page):not(.auth-page) { padding-top: 64px; }
+  .page-main { width: 100% !important; max-width: 100% !important; margin-left: 0 !important; padding: 0 .75rem 3rem !important; box-sizing: border-box; }
+  .page-main > .page-heading { width: 100%; box-sizing: border-box; padding: 1.5rem .75rem 1.25rem !important; }
+  .page-main > .page-heading h1 { font-size: clamp(1.65rem, 7vw, 2.35rem) !important; line-height: 1.18; overflow-wrap: anywhere; }
+  .page-main > .page-heading p:not(.eyebrow) { font-size: .9rem; line-height: 1.55; }
+  .content-panel, .game-play-panel, .game-paytable { width: 100% !important; max-width: 100% !important; box-sizing: border-box; margin: .85rem 0 !important; padding: 1rem !important; }
+  .summary-grid, .wallet-summary, .admin-stats-grid { width: 100% !important; max-width: 100% !important; box-sizing: border-box; margin: .85rem 0 !important; gap: .75rem !important; }
+  .summary-card, .wallet-summary > article { min-width: 0; padding: 1rem !important; }
+  .summary-card strong { font-size: 1.55rem; overflow-wrap: anywhere; }
+  .summary-card > span { font-size: 2.2rem; }
+  .quick-link-grid { grid-template-columns: 1fr !important; gap: .75rem; }
+  .quick-link-grid a { min-width: 0; padding: 1rem; }
+  .panel-heading { gap: .7rem; }
+  .panel-heading h2, .section-title { font-size: 1.35rem !important; line-height: 1.25; }
+  .data-table-wrap, .table-scroll, .leaderboard-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table, .leaderboard-table table { min-width: 620px; }
+  input, select, textarea, button { max-width: 100%; box-sizing: border-box; }
+  .btn, .page-main .btn { min-height: 44px; }
 }
 
-@media (max-width: 600px) {
-    .top-nav .coin-logo,
-    .top-nav .coin-logo.has-image {
-        width: 40px;
-        height: 40px;
-    }
-
-    .top-nav .balance-label {
-        display: none;
-    }
-
-    .top-nav .balance-item {
-        padding: .38rem .58rem;
-    }
-
-    .top-nav .balance-value {
-        font-size: .78rem;
-    }
+@media (max-width: 560px) {
+  .page-main { padding-left: .65rem !important; padding-right: .65rem !important; }
+  .page-main > .page-heading { padding-left: .65rem !important; padding-right: .65rem !important; }
+  .summary-grid, .wallet-summary, .admin-stats-grid { grid-template-columns: 1fr !important; }
+  .summary-card { text-align: center; }
+  .form-grid, .profile-form-grid { grid-template-columns: 1fr !important; }
+  .form-grid .wide, .profile-form-grid .wide { grid-column: auto !important; }
+  .two-column, .three-column { grid-template-columns: 1fr !important; }
 }
 
-@media (max-width: 420px) {
-    .top-nav {
-        padding-left: .55rem;
-        padding-right: .55rem;
-        gap: .4rem;
-    }
-
-    .top-nav .nav-actions {
-        gap: .3rem;
-    }
-
-    .top-nav .wallet-balance {
-        gap: .25rem;
-    }
-
-    .top-nav .balance-item {
-        padding: .34rem .48rem;
-        gap: .25rem;
-    }
-
-    .top-nav .balance-icon {
-        font-size: .88rem;
-    }
-
-    .top-nav .balance-value {
-        font-size: .72rem;
-    }
-
-    .top-nav .menu-toggle {
-        flex-basis: 40px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        font-size: 1.05rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .top-nav .coin-logo,
-    .top-nav .coin-logo.has-image {
-        width: 38px;
-        height: 38px;
-    }
-
-    .top-nav .balance-item {
-        padding: .32rem .42rem;
-    }
-
-    .top-nav .balance-value {
-        font-size: .68rem;
-    }
+@media (max-width: 380px) {
+  .page-main { padding-left: .5rem !important; padding-right: .5rem !important; }
+  .content-panel, .game-play-panel, .game-paytable { padding: .8rem !important; }
+  .section-title { font-size: 1.2rem !important; }
 }
