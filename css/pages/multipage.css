@@ -277,30 +277,49 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .admin-stats-grid > article { padding: .9rem; }
 }
 
-/* ============================================================
-   Mobile card/layout polish
-   ============================================================ */
-@media (max-width: 760px) {
-  .multipage-game-grid { grid-template-columns: 1fr !important; gap: .85rem; }
-  .multipage-game-card { min-width: 0; }
-  .multipage-game-card img { height: 185px; object-fit: cover; }
-  .game-action-row { display: grid !important; grid-template-columns: 1fr 1fr; gap: .65rem; }
-  .game-action-row > * { width: 100% !important; min-width: 0; }
-  .reward-grid { grid-template-columns: repeat(7, minmax(132px, 1fr)) !important; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; padding-bottom: .8rem; }
-  .reward-card { scroll-snap-align: start; }
-  .challenge-grid { grid-template-columns: 1fr !important; }
-  .challenge-card { min-width: 0; }
-  .profile-overview-grid { grid-template-columns: 1fr !important; }
-  .wallet-actions { grid-template-columns: 1fr !important; }
-  .wallet-actions > article:last-child:nth-child(odd) { grid-column: auto !important; }
-  .leaderboard-tabs, .profile-tabs { overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
-  .leaderboard-tabs::-webkit-scrollbar, .profile-tabs::-webkit-scrollbar { display: none; }
+
+/* Final narrow-screen safeguards */
+@media (max-width: 560px) {
+  .standalone-game { width: 100%; max-width: 100%; overflow: hidden; }
+  .game-play-panel, .game-paytable { min-width: 0; }
+  .bet-controls { width: 100%; max-width: 100%; }
+  .slot-reels { padding-left: .25rem; padding-right: .25rem; }
 }
 
-@media (max-width: 560px) {
-  .multipage-game-card img { height: 170px; }
-  .game-action-row { grid-template-columns: 1fr !important; }
-  .reward-grid { grid-template-columns: repeat(7, minmax(140px, 1fr)) !important; }
-  .admin-page-nav { overflow-x: auto; flex-wrap: nowrap; }
-  .admin-page-nav a { flex: 0 0 auto !important; }
+/* ============================================================
+   MOBILE BRANDWORD FINAL OVERRIDE
+   Must come after multipage header rules so the RAWR wordmark
+   cannot reappear at 560px/420px/340px breakpoints.
+   ============================================================ */
+@media (max-width: 600px) {
+  .app-topbar .app-brand {
+    min-width: 36px !important;
+    max-width: 44px !important;
+    width: 44px !important;
+    flex: 0 0 44px !important;
+    font-size: 0 !important;
+    letter-spacing: 0 !important;
+    gap: 0 !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  .app-topbar .app-brand img {
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-topbar .app-brand {
+    width: 40px !important;
+    flex-basis: 40px !important;
+    max-width: 40px !important;
+  }
+
+  .app-topbar .app-brand img {
+    width: 34px !important;
+    height: 34px !important;
+  }
 }
