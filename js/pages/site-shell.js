@@ -54,7 +54,7 @@
     const links = [
       ['dashboard', 'Dashboard', 'pages/dashboard/index.html', 'fa-home'],
       ['mining', 'Mining', 'pages/mining/index.html', 'fa-digging'],
-      ['games', 'Casino', 'pages/games/index.html', 'fa-dice'],
+      ['games', page === 'mining' ? 'Lobby' : 'Casino', 'pages/games/index.html', 'fa-dice'],
       ['wallet', 'Wallet', 'pages/wallet/index.html', 'fa-wallet'],
       ['leaderboard', 'Leaderboard', 'pages/leaderboard/index.html', 'fa-trophy'],
       ['rewards', 'Daily Rewards', 'pages/rewards/index.html', 'fa-gift'],
@@ -81,7 +81,48 @@
 
   if (['dashboard', 'mining', 'games', 'wallet', 'leaderboard', 'rewards', 'profile'].includes(page)) {
     const footer = document.createElement('footer');
-    footer.innerHTML = `<div class="footer-content"><div class="footer-column"><h3>RAWR Casino</h3><p>The ultimate play-to-earn experience in the jungle. Play, win, and earn your way to the top.</p><div class="social-links"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a><a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a></div></div><div class="footer-column"><h3>Quick Links</h3><ul class="footer-links"><li><a href="${href('pages/dashboard/index.html')}">Dashboard</a></li><li><a href="${href('pages/mining/index.html')}">Mining</a></li><li><a href="${href('pages/games/index.html')}">Casino Games</a></li><li><a href="${href('pages/wallet/index.html')}">Wallet</a></li></ul></div><div class="footer-column"><h3>Resources</h3><ul class="footer-links"><li><a href="${href('pages/leaderboard/index.html')}">Leaderboard</a></li><li><a href="${href('pages/rewards/index.html')}">Daily Rewards</a></li><li><a href="${href('pages/profile/index.html')}">Player Profile</a></li></ul></div><div class="footer-column"><h3>Legal</h3><ul class="footer-links"><li><a href="${href('README.md')}">About this demo</a></li></ul></div></div><div class="copyright">© 2026 RAWR Casino. Frontend portfolio demo.</div>`;
+    footer.innerHTML = `<div class="footer-content">
+      <div class="footer-column">
+        <h3>RAWR Casino</h3>
+        <p>The ultimate play-to-earn experience in the jungle. Play, win, and earn your way to the top!</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+          <a href="#" aria-label="Reddit"><i class="fab fa-reddit"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="${href('pages/dashboard/index.html')}">Home</a></li>
+          <li><a href="${href('pages/mining/index.html')}">Mining</a></li>
+          <li><a href="${href('pages/games/index.html')}">Casino</a></li>
+          <li><a href="${href('pages/leaderboard/index.html')}">Leaderboard</a></li>
+          <li><a href="${href('pages/wallet/index.html')}">Wallet</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Whitepaper</a></li>
+          <li><a href="#">Tokenomics</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">AML Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2023 RAWR Casino. All rights reserved. The jungle is yours to conquer!</div>`;
     const notice = document.getElementById('demo-notice');
     if (notice) document.body.insertBefore(footer, notice);
     else document.body.append(footer);
